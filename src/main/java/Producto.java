@@ -1,3 +1,5 @@
+import java.math.*;
+
 import javax.persistence.*;
 
 import org.openxava.annotations.*;
@@ -22,5 +24,14 @@ public class Producto {
 	(fetch=FetchType.LAZY, optional=true)
 	@DescriptionsList
 	Categoria categoria;
-
+	
+	@Money
+	BigDecimal precio;
+	
+	@Files
+	@Column(length=32)
+	String imagenes;
+	
+	@TextArea
+	String observaciones;
 }
