@@ -15,6 +15,7 @@ import com.gestio400.practicasopenxava.calculadores.*;
 import lombok.*;
 
 @Entity @Getter @Setter
+@View(members = "anyo,numero, fecha; cliente; detalles; observaciones")
 public class Factura {
 	
 	@Id
@@ -45,6 +46,7 @@ public class Factura {
 	
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional=false)
+	@ReferenceView("Simple")
 	Cliente cliente;
 
 }
