@@ -1,6 +1,10 @@
 package com.gestion400.practicasopenxava.modelo;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+
+import org.hibernate.annotations.*;
+import org.openxava.annotations.*;
 
 import lombok.*;
 
@@ -9,9 +13,9 @@ import lombok.*;
 public class Categoria {
 	
 	@Id
-/*	@Hidden
+	@Hidden
 	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy="uuid")*/
+	@GenericGenerator(name="system-uuid", strategy="uuid")
 	@Column(length=30)
 	String id;
 	
