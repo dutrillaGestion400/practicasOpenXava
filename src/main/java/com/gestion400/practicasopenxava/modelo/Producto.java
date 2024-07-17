@@ -27,10 +27,15 @@ public class Producto {
 	@Money
 	BigDecimal precio;
 	
-	@Files
+	@Stereotype ("GALERIA_IMAGENES")
 	@Column(length=32)
 	String imagenes;
 	
+	@Stereotype("TEXTO_GRANDE")
 	@TextArea
 	String observaciones;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@DescriptionsList
+	Fabricante fabricante;
 }
