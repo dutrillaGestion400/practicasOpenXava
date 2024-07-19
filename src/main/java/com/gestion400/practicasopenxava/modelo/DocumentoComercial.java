@@ -16,7 +16,7 @@ import com.gestion400.practicasopenxava.calculadores.*;
 import lombok.*;
 
 @Entity @Getter @Setter
-@View(members = "anyo, numero, fecha; " +
+@View(members = "anyo, numero, fecha," +
 			"datos{" +
 		 		"cliente;" +
 			    "detalles;" + 
@@ -80,5 +80,10 @@ abstract public class DocumentoComercial extends Identificable{
 		Integer ultimoNumero = (Integer) query.getSingleResult();
 		this.numero = ultimoNumero == null ? 1 : ultimoNumero + 1;
 	}
+	
+	@org.hibernate.annotations.Formula("IMPORTETOTAL * 0.10")
+	@Setter(AccessLevel.NONE)
+	@Stereotype("DINERO")
+	BigDecimal beneficioEstimado;
 	
 }
