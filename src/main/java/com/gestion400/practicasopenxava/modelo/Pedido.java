@@ -52,7 +52,7 @@ public class Pedido extends DocumentoComercial {
 		return factura == null || isEntregado();
 	}
 	
-	@PreRemove
+	
 	private void validarPreBorrar() {
 		if (factura != null) {
 			throw new javax.validation.ValidationException(
